@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\p1x3l\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_AnagramSolver.809464243.00" t="ExcludeRecursive" />
+    <e p="D:\Workspace\VS 2012\AnagramSolver" t="IncludeRecursive">
+      <e p="AnagramSolver.csproj" t="IncludeRecursive" />
+      <e p="AnagramSolver.sln" t="IncludeFlat" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="db.csv" t="Include" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Program.cs" t="Include" />
+      <e p="Properties" t="Include">
+        <e p="AssemblyInfo.cs" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>

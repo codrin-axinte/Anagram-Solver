@@ -1,0 +1,6 @@
+D:\Workspace\VS 2012\AnagramSolver\bin\Debug\AnagramSolver.exe
+D:\Workspace\VS 2012\AnagramSolver\bin\Debug\AnagramSolver.pdb
+D:\Workspace\VS 2012\AnagramSolver\obj\Debug\AnagramSolver.csprojResolveAssemblyReference.cache
+D:\Workspace\VS 2012\AnagramSolver\obj\Debug\AnagramSolver.exe
+D:\Workspace\VS 2012\AnagramSolver\obj\Debug\AnagramSolver.pdb
+D:\Workspace\VS 2012\AnagramSolver\bin\Debug\db.csv
