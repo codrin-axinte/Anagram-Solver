@@ -6,23 +6,36 @@ using System.Text.RegularExpressions;
 
 namespace AnagramSolver {
     internal class Program {
-        
+        /**
+         * TODO: Make a dedicated class for algo solver
+         * TODO: Write solution to cache and have a hash map for each database
+         * TODO: Improve the searching algorithm
+         */
         public static void Main(string[] args) {
-            var anagram = GetAnagram();
+            var anagram = GetAnagram(9);
             // After we have parsed the anagram, we must find the words matching the solver rules.
-            var solutions = Solve(anagram, "db.csv");
-            if (solutions != null) {
+            var solutions = CollectSolutions(anagram, "db.csv");
+            if (solutions.Count == 0) {
                 Console.WriteLine("[!] No solution was found.");
+                Console.ReadLine();
+                return;
             }
-            
-            Console.WriteLine("[OK] Solution is '" + solutions.First() + "'");
-           
+ 
+            Console.WriteLine("[OK] Solution is '" + solutions.First() + "' from a total of " + solutions.Count);
+            if (solutions.Count <= 10) {
+                Console.WriteLine();
+                Console.WriteLine("[-] Other Suggestions:");
+                for (var i = 1; i < solutions.Count; i++) {
+                    Console.WriteLine(" [+] Suggestion '" + solutions[i] + "'");
+                }
+            }
+          Console.ReadLine();
         }
 
-        private static string Solve(string anagram, string filePath) {
-            var letters = anagram.ToLower().ToCharArray();
-            string result = null;
-            var resultWeight = 0;
+
+
+        private static List<string> CollectSolutions(string anagram, string filePath) {
+            var data = new List<string>();
             try {
                 using (var reader = new StreamReader(filePath)) {
                     string line;
@@ -35,12 +48,8 @@ namespace AnagramSolver {
                         // atc = cat
                         // atcs = cat's
                         if(len > anagram.Length) continue;
-                        var weight = value.IndexOfAny(letters);
-                        if (weight <= 0 || weight <= resultWeight) continue;
-                        result = value;
-                        resultWeight = weight;
-                        Console.WriteLine("[+] Result changed with " + result + " weight " + resultWeight);
-
+                        if(value.All(anagram.Contains))
+                            data.Add(value);
                     }
                 }
             }
@@ -48,10 +57,9 @@ namespace AnagramSolver {
                 Console.WriteLine(e);
                 throw;
             }
+            data.Sort();
             
-           
-            
-            return result;
+            return data;
         }
         
         private static string GetAnagram(int maxCharacters = 3, int minCharacters = 1){
