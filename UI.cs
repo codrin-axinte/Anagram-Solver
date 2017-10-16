@@ -8,10 +8,11 @@ namespace AnagramSolver
 {
     public static class UI
     {
+        //
         public static string Input(string label, string operatorFormat = ">>> ")
         {
             Console.WriteLine("[-] " + label);
-            Console.Write(">>> ");
+            Console.Write(operatorFormat);
             return Console.ReadLine();
         }
 
@@ -40,12 +41,11 @@ namespace AnagramSolver
             Console.WriteLine("[OK] " + message);
         }
 
-        public static void List(List<string> items, string label = null, int start = 1, int end = 0)
+        public static void List(List<string> items, string label = null, int start = 0, int end = 0)
         {
-            if (label != null)
-                Info(label);
+            if (label != null) Info(label);
             var length = end == 0 ? items.Count : end;
-            for(var i = start; i< length; i++)
+            for(var i = start; i < length; i++)
                 Console.WriteLine(" [-] " + items[i]);   
         }
 

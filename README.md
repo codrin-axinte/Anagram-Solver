@@ -1,7 +1,12 @@
 # Anagram Solver
 
+### High-Level Description
+Design a system that will allow the player to enter up to 3 random letters. The system will return the beste, largest, valid English word that can be made up of the 3 letters(blanks/spaces are not allowed). For example: **TCA** should return **CAT**, **OZR** should return **OR**, **ZZA** should return **A**.
+
+**Extension: Expand the project so that it supports 4 letter anagrams(*optional: up to max of 6*)**
+
 ### Concept
-* Get the file path from user input, if none(blank,empty) we default to the project db file. This allows the application to be more dynamic.
+* Get the database file path
 * Get the angram input from the user
 * Validate the input:
 	- to have only letters
@@ -19,6 +24,8 @@
 * Output other solutions as suggestions, if exists
 
 ### Concept In Depth
+* **Database File**
+We allow the player the specify a database file to read, otherwise we will use the default one if left blank. This allows the application to be more dynamic.
 * **Anagram validation**
   For the anagram validation we will use a regex pattern to solve all at once. The pattern consists in only alphabetics characters A to Z (Upper or Lower case) and the characters length range defined. Minimum 1 character with a maximum of 3. Pattern example `^[a-zA-Z]}{1,3}$`.
 

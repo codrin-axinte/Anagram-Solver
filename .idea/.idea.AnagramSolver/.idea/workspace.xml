@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46d12932-fbee-4720-afef-55b8b09b2d0e" name="Default" comment="First Init">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.AnagramSolver/.idea/contentModel.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.AnagramSolver/.idea/indexLayout.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.AnagramSolver/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.AnagramSolver/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.AnagramSolver/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.AnagramSolver/riderModule.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/Debug/db.csv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/obj/Debug/AnagramSolver.csproj.FileListAbsolute.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <list default="true" id="46d12932-fbee-4720-afef-55b8b09b2d0e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Algo.cs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Cache.cs" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/Debug/db.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/cache.csv" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.AnagramSolver/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.AnagramSolver/.idea/contentModel.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.AnagramSolver/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.AnagramSolver/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AnagramSolver.csproj" afterPath="$PROJECT_DIR$/AnagramSolver.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Program.cs" afterPath="$PROJECT_DIR$/Program.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI.cs" afterPath="$PROJECT_DIR$/UI.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obj/Debug/AnagramSolver.csproj.FileListAbsolute.txt" afterPath="$PROJECT_DIR$/obj/Debug/AnagramSolver.csproj.FileListAbsolute.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,25 +32,101 @@
       <file leaf-file-name="Program.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Program.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+            <state relative-caret-position="626">
+              <caret line="74" column="70" lean-forward="false" selection-start-line="74" selection-start-column="70" selection-end-line="74" selection-end-column="70" />
               <folding>
-                <marker date="1507599499755" expanded="false" signature="6:121" ph="..." />
-                <marker date="1507599499755" expanded="true" signature="147:3916" ph="{...}" />
-                <marker date="1507599499755" expanded="true" signature="176:3914" ph="{...}" />
-                <marker date="1507599499755" expanded="true" signature="186:385" ph="/* TODO: Make a dedicated class for algo solver ... */" />
-                <marker date="1507599499755" expanded="true" signature="433:1286" ph="{...}" />
-                <marker date="1507599499755" expanded="true" signature="678:818" ph="{...}" />
-                <marker date="1507599499755" expanded="true" signature="974:1246" ph="{...}" />
-                <marker date="1507599499755" expanded="true" signature="1132:1232" ph="{...}" />
-                <marker date="1507599499755" expanded="true" signature="1376:2333" ph="{...}" />
-                <marker date="1507599499755" expanded="true" signature="1437:2151" ph="{...}" />
-                <marker date="1507599499755" expanded="true" signature="1503:2137" ph="{...}" />
-                <marker date="1507599499755" expanded="true" signature="1622:2119" ph="{...}" />
-                <marker date="1507599499755" expanded="true" signature="1885:1937" ph="/* atc = cat ... */" />
-                <marker date="1507599499755" expanded="true" signature="2184:2260" ph="{...}" />
-                <marker date="1507599499755" expanded="true" signature="2429:3908" ph="{...}" />
-                <marker date="1507599499755" expanded="true" signature="2443:2679" ph="/* Here we define the pattern for the anagram we want to solve. ... */" />
+                <marker date="1508021764980" expanded="true" signature="7:122" ph="..." />
+                <marker date="1508021764980" expanded="true" signature="148:4713" ph="{...}" />
+                <marker date="1508021764980" expanded="true" signature="150:182" ph="/// ... " />
+                <marker date="1508021764980" expanded="true" signature="210:4711" ph="{...}" />
+                <marker date="1508021764980" expanded="true" signature="268:2538" ph="{...}" />
+                <marker date="1508021764980" expanded="true" signature="924:1034" ph="/* Try to find the anagram in the repository ... */" />
+                <marker date="1508021764980" expanded="true" signature="1163:1963" ph="{...}" />
+                <marker date="1508021764980" expanded="true" signature="1333:1459" ph="/* First we must check if there are any solutions at all ... */" />
+                <marker date="1508021764980" expanded="true" signature="1512:1784" ph="{...}" />
+                <marker date="1508021764980" expanded="true" signature="2250:2470" ph="{...}" />
+                <marker date="1508021764980" expanded="true" signature="2618:2768" ph="{...}" />
+                <marker date="1508021764980" expanded="true" signature="2864:3573" ph="{...}" />
+                <marker date="1508021764980" expanded="true" signature="3626:4697" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Algo.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Algo.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="15" column="36" lean-forward="false" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+              <folding>
+                <marker date="1508017718647" expanded="true" signature="6:147" ph="..." />
+                <marker date="1508017718647" expanded="true" signature="173:3449" ph="{...}" />
+                <marker date="1508017718647" expanded="true" signature="197:3447" ph="{...}" />
+                <marker date="1508017718647" expanded="true" signature="413:456" ph="{...}" />
+                <marker date="1508017718647" expanded="true" signature="547:642" ph="{...}" />
+                <marker date="1508017718647" expanded="true" signature="727:1155" ph="{...}" />
+                <marker date="1508017718647" expanded="true" signature="741:977" ph="/* Here we define the pattern for the anagram we want to solve. ... */" />
+                <marker date="1508017718647" expanded="true" signature="1209:1368" ph="{...}" />
+                <marker date="1508017718647" expanded="true" signature="1428:2935" ph="{...}" />
+                <marker date="1508017718647" expanded="true" signature="1604:2299" ph="{...}" />
+                <marker date="1508017718647" expanded="true" signature="1758:2285" ph="{...}" />
+                <marker date="1508017718647" expanded="true" signature="2032:2267" ph="{...}" />
+                <marker date="1508017718647" expanded="true" signature="2332:2486" ph="{...}" />
+                <marker date="1508017718647" expanded="true" signature="2499:2727" ph="/* Before we return, we must sort the list data to match our requierement. ... */" />
+                <marker date="1508017718647" expanded="true" signature="2982:3441" ph="{...}" />
+                <marker date="1508017718647" expanded="true" signature="2996:3160" ph="/* We split the current line by a comma. We assume that the format is: value, length ... */" />
+                <marker date="1508017718647" expanded="true" signature="3222:3394" ph="/* We convert the second row to be able to compare it ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Cache.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Cache.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="534">
+              <caret line="57" column="24" lean-forward="false" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+              <folding>
+                <marker date="1508001561130" expanded="false" signature="6:64" ph="..." />
+                <marker date="1508001561130" expanded="true" signature="90:2454" ph="{...}" />
+                <marker date="1508001561130" expanded="true" signature="115:2452" ph="{...}" />
+                <marker date="1508001561130" expanded="true" signature="246:316" ph="{...}" />
+                <marker date="1508001561130" expanded="true" signature="364:468" ph="{...}" />
+                <marker date="1508001561130" expanded="true" signature="515:627" ph="{...}" />
+                <marker date="1508001561130" expanded="true" signature="657:766" ph="{...}" />
+                <marker date="1508001561130" expanded="true" signature="803:1709" ph="{...}" />
+                <marker date="1508001561130" expanded="true" signature="1015:1139" ph="{...}" />
+                <marker date="1508001561130" expanded="true" signature="1156:1590" ph="{...}" />
+                <marker date="1508001561130" expanded="true" signature="1223:1576" ph="{...}" />
+                <marker date="1508001561130" expanded="true" signature="1321:1558" ph="{...}" />
+                <marker date="1508001561130" expanded="true" signature="1623:1699" ph="{...}" />
+                <marker date="1508001561130" expanded="true" signature="1768:1838" ph="{...}" />
+                <marker date="1508001561130" expanded="true" signature="1875:2105" ph="{...}" />
+                <marker date="1508001561130" expanded="true" signature="2148:2446" ph="{...}" />
+                <marker date="1508001561130" expanded="true" signature="2219:2408" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UI.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UI.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1012">
+              <caret line="48" column="57" lean-forward="false" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
+              <folding>
+                <marker date="1508000335507" expanded="false" signature="6:115" ph="..." />
+                <marker date="1508000335507" expanded="true" signature="140:1543" ph="{...}" />
+                <marker date="1508000335507" expanded="true" signature="169:1541" ph="{...}" />
+                <marker date="1508000335507" expanded="true" signature="267:416" ph="{...}" />
+                <marker date="1508000335507" expanded="true" signature="465:537" ph="{...}" />
+                <marker date="1508000335507" expanded="true" signature="589:664" ph="{...}" />
+                <marker date="1508000335507" expanded="true" signature="714:787" ph="{...}" />
+                <marker date="1508000335507" expanded="true" signature="839:914" ph="{...}" />
+                <marker date="1508000335507" expanded="true" signature="961:1031" ph="{...}" />
+                <marker date="1508000335507" expanded="true" signature="1133:1358" ph="{...}" />
+                <marker date="1508000335507" expanded="true" signature="1394:1446" ph="{...}" />
+                <marker date="1508000335507" expanded="true" signature="1482:1535" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -73,13 +149,19 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Algo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/UI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Cache.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Words - English Words 79K.csv" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.txt" />
+        <option value="$PROJECT_DIR$/UI.cs" />
+        <option value="$PROJECT_DIR$/Cache.cs" />
+        <option value="$PROJECT_DIR$/Algo.cs" />
         <option value="$PROJECT_DIR$/Program.cs" />
       </list>
     </option>
@@ -175,7 +257,8 @@
       <updated>1507591108326</updated>
       <workItem from="1507591128734" duration="993000" />
       <workItem from="1507592198046" duration="7365000" />
-      <workItem from="1507675660927" duration="171000" />
+      <workItem from="1507675660927" duration="4022000" />
+      <workItem from="1507986977032" duration="16923000" />
     </task>
     <task id="LOCAL-00001" summary="First Init">
       <created>1507596613707</created>
@@ -191,11 +274,25 @@
       <option name="project" value="LOCAL" />
       <updated>1507675812054</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="First Init">
+      <created>1507675844043</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1507675844043</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Merge branch 'master' of https://github.com/codrin-axinte/Anagram-Solver&#10;&#10;# Conflicts:&#10;#&#9;Program.cs">
+      <created>1507680259098</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1507680259098</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8529000" />
+    <option name="totallyTimeSpent" value="29303000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -209,27 +306,28 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297975" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11145833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297975" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39922854" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297975" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297975" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39922854" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,11 +338,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Init" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Init" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/codrin-axinte/Anagram-Solver&#10;&#10;# Conflicts:&#10;#&#9;Program.cs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/codrin-axinte/Anagram-Solver&#10;&#10;# Conflicts:&#10;#&#9;Program.cs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -254,22 +353,62 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1507599499755" expanded="false" signature="6:121" ph="..." />
-            <marker date="1507599499755" expanded="true" signature="147:3916" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="176:3914" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="186:385" ph="/* TODO: Make a dedicated class for algo solver ... */" />
-            <marker date="1507599499755" expanded="true" signature="433:1286" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="678:818" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="974:1246" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="1132:1232" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="1376:2333" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="1437:2151" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="1503:2137" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="1622:2119" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="1885:1937" ph="/* atc = cat ... */" />
-            <marker date="1507599499755" expanded="true" signature="2184:2260" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="2429:3908" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="2443:2679" ph="/* Here we define the pattern for the anagram we want to solve. ... */" />
+            <marker date="1508021764980" expanded="true" signature="7:122" ph="..." />
+            <marker date="1508021764980" expanded="true" signature="148:4713" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="150:182" ph="/// ... " />
+            <marker date="1508021764980" expanded="true" signature="210:4711" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="268:2538" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="924:1034" ph="/* Try to find the anagram in the repository ... */" />
+            <marker date="1508021764980" expanded="true" signature="1163:1963" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="1333:1459" ph="/* First we must check if there are any solutions at all ... */" />
+            <marker date="1508021764980" expanded="true" signature="1512:1784" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="2250:2470" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="2618:2768" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="2864:3573" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="3626:4697" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="966">
+          <caret line="46" column="54" lean-forward="false" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
+          <folding>
+            <marker date="1508000335507" expanded="false" signature="6:115" ph="..." />
+            <marker date="1508000335507" expanded="true" signature="140:1543" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="169:1541" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="267:416" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="465:537" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="589:664" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="714:787" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="839:914" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="961:1031" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="1133:1358" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="1394:1446" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="1482:1535" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1508021764980" expanded="true" signature="7:122" ph="..." />
+            <marker date="1508021764980" expanded="true" signature="148:4713" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="150:182" ph="/// ... " />
+            <marker date="1508021764980" expanded="true" signature="210:4711" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="268:2538" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="924:1034" ph="/* Try to find the anagram in the repository ... */" />
+            <marker date="1508021764980" expanded="true" signature="1163:1963" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="1333:1459" ph="/* First we must check if there are any solutions at all ... */" />
+            <marker date="1508021764980" expanded="true" signature="1512:1784" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="2250:2470" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="2618:2768" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="2864:3573" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="3626:4697" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -279,34 +418,31 @@
         <state relative-caret-position="253">
           <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding>
-            <marker date="1507599499755" expanded="false" signature="6:121" ph="..." />
-            <marker date="1507599499755" expanded="true" signature="147:3916" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="176:3914" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="186:385" ph="/* TODO: Make a dedicated class for algo solver ... */" />
-            <marker date="1507599499755" expanded="true" signature="433:1286" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="678:818" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="974:1246" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="1132:1232" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="1376:2333" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="1437:2151" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="1503:2137" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="1622:2119" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="1885:1937" ph="/* atc = cat ... */" />
-            <marker date="1507599499755" expanded="true" signature="2184:2260" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="2429:3908" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="2443:2679" ph="/* Here we define the pattern for the anagram we want to solve. ... */" />
+            <marker date="1508021764980" expanded="true" signature="7:122" ph="..." />
+            <marker date="1508021764980" expanded="true" signature="148:4713" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="150:182" ph="/// ... " />
+            <marker date="1508021764980" expanded="true" signature="210:4711" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="268:2538" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="924:1034" ph="/* Try to find the anagram in the repository ... */" />
+            <marker date="1508021764980" expanded="true" signature="1163:1963" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="1333:1459" ph="/* First we must check if there are any solutions at all ... */" />
+            <marker date="1508021764980" expanded="true" signature="1512:1784" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="2250:2470" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="2618:2768" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="2864:3573" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="3626:4697" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db.csv">
+    <entry file="file://$PROJECT_DIR$/resources/db.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db.csv">
+    <entry file="file://$PROJECT_DIR$/resources/db.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
           <caret line="11214" column="3" lean-forward="false" selection-start-line="11214" selection-start-column="0" selection-end-line="11214" selection-end-column="3" />
@@ -320,27 +456,113 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/cache.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/Debug/resources/cache.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UI.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1012">
+          <caret line="48" column="57" lean-forward="false" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
+          <folding>
+            <marker date="1508000335507" expanded="false" signature="6:115" ph="..." />
+            <marker date="1508000335507" expanded="true" signature="140:1543" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="169:1541" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="267:416" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="465:537" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="589:664" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="714:787" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="839:914" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="961:1031" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="1133:1358" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="1394:1446" ph="{...}" />
+            <marker date="1508000335507" expanded="true" signature="1482:1535" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cache.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="57" column="24" lean-forward="false" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+          <folding>
+            <marker date="1508001561130" expanded="false" signature="6:64" ph="..." />
+            <marker date="1508001561130" expanded="true" signature="90:2454" ph="{...}" />
+            <marker date="1508001561130" expanded="true" signature="115:2452" ph="{...}" />
+            <marker date="1508001561130" expanded="true" signature="246:316" ph="{...}" />
+            <marker date="1508001561130" expanded="true" signature="364:468" ph="{...}" />
+            <marker date="1508001561130" expanded="true" signature="515:627" ph="{...}" />
+            <marker date="1508001561130" expanded="true" signature="657:766" ph="{...}" />
+            <marker date="1508001561130" expanded="true" signature="803:1709" ph="{...}" />
+            <marker date="1508001561130" expanded="true" signature="1015:1139" ph="{...}" />
+            <marker date="1508001561130" expanded="true" signature="1156:1590" ph="{...}" />
+            <marker date="1508001561130" expanded="true" signature="1223:1576" ph="{...}" />
+            <marker date="1508001561130" expanded="true" signature="1321:1558" ph="{...}" />
+            <marker date="1508001561130" expanded="true" signature="1623:1699" ph="{...}" />
+            <marker date="1508001561130" expanded="true" signature="1768:1838" ph="{...}" />
+            <marker date="1508001561130" expanded="true" signature="1875:2105" ph="{...}" />
+            <marker date="1508001561130" expanded="true" signature="2148:2446" ph="{...}" />
+            <marker date="1508001561130" expanded="true" signature="2219:2408" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Algo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="15" column="36" lean-forward="false" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+          <folding>
+            <marker date="1508017718647" expanded="true" signature="6:147" ph="..." />
+            <marker date="1508017718647" expanded="true" signature="173:3449" ph="{...}" />
+            <marker date="1508017718647" expanded="true" signature="197:3447" ph="{...}" />
+            <marker date="1508017718647" expanded="true" signature="413:456" ph="{...}" />
+            <marker date="1508017718647" expanded="true" signature="547:642" ph="{...}" />
+            <marker date="1508017718647" expanded="true" signature="727:1155" ph="{...}" />
+            <marker date="1508017718647" expanded="true" signature="741:977" ph="/* Here we define the pattern for the anagram we want to solve. ... */" />
+            <marker date="1508017718647" expanded="true" signature="1209:1368" ph="{...}" />
+            <marker date="1508017718647" expanded="true" signature="1428:2935" ph="{...}" />
+            <marker date="1508017718647" expanded="true" signature="1604:2299" ph="{...}" />
+            <marker date="1508017718647" expanded="true" signature="1758:2285" ph="{...}" />
+            <marker date="1508017718647" expanded="true" signature="2032:2267" ph="{...}" />
+            <marker date="1508017718647" expanded="true" signature="2332:2486" ph="{...}" />
+            <marker date="1508017718647" expanded="true" signature="2499:2727" ph="/* Before we return, we must sort the list data to match our requierement. ... */" />
+            <marker date="1508017718647" expanded="true" signature="2982:3441" ph="{...}" />
+            <marker date="1508017718647" expanded="true" signature="2996:3160" ph="/* We split the current line by a comma. We assume that the format is: value, length ... */" />
+            <marker date="1508017718647" expanded="true" signature="3222:3394" ph="/* We convert the second row to be able to compare it ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+        <state relative-caret-position="626">
+          <caret line="74" column="70" lean-forward="false" selection-start-line="74" selection-start-column="70" selection-end-line="74" selection-end-column="70" />
           <folding>
-            <marker date="1507599499755" expanded="false" signature="6:121" ph="..." />
-            <marker date="1507599499755" expanded="true" signature="147:3916" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="176:3914" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="186:385" ph="/* TODO: Make a dedicated class for algo solver ... */" />
-            <marker date="1507599499755" expanded="true" signature="433:1286" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="678:818" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="974:1246" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="1132:1232" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="1376:2333" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="1437:2151" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="1503:2137" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="1622:2119" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="1885:1937" ph="/* atc = cat ... */" />
-            <marker date="1507599499755" expanded="true" signature="2184:2260" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="2429:3908" ph="{...}" />
-            <marker date="1507599499755" expanded="true" signature="2443:2679" ph="/* Here we define the pattern for the anagram we want to solve. ... */" />
+            <marker date="1508021764980" expanded="true" signature="7:122" ph="..." />
+            <marker date="1508021764980" expanded="true" signature="148:4713" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="150:182" ph="/// ... " />
+            <marker date="1508021764980" expanded="true" signature="210:4711" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="268:2538" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="924:1034" ph="/* Try to find the anagram in the repository ... */" />
+            <marker date="1508021764980" expanded="true" signature="1163:1963" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="1333:1459" ph="/* First we must check if there are any solutions at all ... */" />
+            <marker date="1508021764980" expanded="true" signature="1512:1784" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="2250:2470" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="2618:2768" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="2864:3573" ph="{...}" />
+            <marker date="1508021764980" expanded="true" signature="3626:4697" ph="{...}" />
           </folding>
         </state>
       </provider>

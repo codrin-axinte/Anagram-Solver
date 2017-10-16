@@ -5,25 +5,43 @@ using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace AnagramSolver {
+/// <summary>
+///
+/// </summary>
     internal class Program {
         
         public static void Main(string[] args) {
-
+            // Get words database path 
             var filePath = GetFilePath();
-
+            // Init Algo object with the database file path
+            var algo = new Algo(filePath);
             // Validate and get the anagram
-            var anagram = GetAnagram();
-            // After we have parsed the anagram, we must find the words matching the solver rules.
-            var solutions = CollectSolutions(anagram, filePath);
-            // We store the total solutions count for later usage
-            var count = solutions.Count;
-            // First we must check if there are any solutions at all
-            if ( count == 0) {
-                // If there are none we output a message for the user and we return/exit
-                UI.Warning("No solution was found.");
-                // Pause the console.
-                UI.Pause();
-                return;
+            var anagram = GetAnagram(algo);
+            // Encode db file path, so we pair the cache with the file path database. Different databases may have different solutions
+            var cacheFile = Base64Encode(filePath);
+            // Init Cache Manager
+            var cache = new Cache("resources/" + cacheFile);
+            // Load data from cache file and unserialize it
+            cache.Load();
+             // Try to find the anagram in the repository
+            // Check if anagram was found in the cache repository
+            var solutions = cache.Find(anagram);
+                
+            var count = 0;
+            if (solutions == null) {
+                // If there were no solutions found in the cache repository, then we collect solutions
+                solutions = algo.Solve(anagram);
+                // First we must check if there are any solutions at all
+                // We store the total solutions count for later usage
+                if ((count = solutions.Count) == 0) {
+                    // If there are none we output a message for the user and we return/exit
+                    UI.Warning("No solution was found.");
+                    // Pause the console.
+                    UI.Pause();
+                    return;
+                }
+                // We store the valid anagram with already solved solutions to the cache repository and save it
+               cache.Put(anagram, solutions).Save();
             }
 
             // Otherwise we output the first solution
@@ -32,23 +50,29 @@ namespace AnagramSolver {
             //In addition we check if there are any another solutions so we can suggest them to the user
             if(count < 10) {
                 UI.Blank();
-                // Here we start from one to exclude the repetition of the first solution, we already have above
+                // Here we start from one to exclude the repetition of the first solution, we already have it above
                 UI.List(solutions, "Other suggestions:", 1);
             }
-
             // Pause the console.
             UI.Pause();
         }
-
-        private static string GetFilePath(string defaultFilePath = "db.csv") {          
+        
+        
+        private static string Base64Encode(string plainText) {
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
+            return Convert.ToBase64String(plainTextBytes);
+        }
+       
+        private static string GetFilePath(string defaultFilePath = "resources/db.csv") {          
             string path;
             bool fileExists;
-
+            // We repeat the reading until the file exists
             do {
-                path = UI.Input("Please input your dictionary path(Leave it blank to use the default):");
+                path = UI.Input("Please input your dictionary path (Leave it blank to use the default):");
+                // If the input is left blank we set the path to default one
                 if (string.IsNullOrEmpty(path))            
                     path = defaultFilePath;
-
+                // IF the the file does not exists we output a message
                 if (!(fileExists = File.Exists(path)))
                     UI.Error("File not found at the given path");
                 
@@ -57,47 +81,7 @@ namespace AnagramSolver {
             return path;
         }
 
-        private static List<string> CollectSolutions(string anagram, string filePath) {
-            // We prepare a list of solutions to return later
-            var data = new List<string>();
-            try {
-                // We try to parse the file from the given path using the StreamReader
-                using (var reader = new StreamReader(filePath)) {
-                    // This stores the current line while reading and parsing
-                    string line;
-                    // While there are lines to read, we assing line var the current reading line
-                    while ((line = reader.ReadLine()) != null) {
-                        // We split the current line by a comma. We assume that the format is: value, length
-                        var row = line.Split(',');
-                        // We store the first row as lowercase for avoiding any case issues
-                        var value = row[0].ToLower();
-                        // We convert the second row to be able to compare it
-                        var len = Convert.ToInt32(row[1]);
-                        //
-                        if(len > anagram.Length || !anagram.All(value.Contains)) continue;
-                        data.Add(value);
-                    }
-                }
-            }
-            catch (Exception e) {
-                // If any error occurs we catch, output it, and throw it again
-                UI.Error(e.Message);
-                throw;
-            }
-
-            // We sort all the solutions
-            // TODO: Improve sorting to order them by the length of characters first and after alphabetically
-            data.Sort();
-           
-            // At the end we return all the sorted solutions
-            return data;
-        }
-        
-        private static string GetAnagram(int maxCharacters = 3, int minCharacters = 1){
-            // Here we define the pattern for the anagram we want to solve. 
-            // The pattern consists in only alphabetics characters a-z (Uppers or Lowercase)
-            // And from the characters length range defined in the parameters.
-            var pattern = "^[a-zA-Z]{"+ minCharacters+","+ maxCharacters +"}$";
+        private static string GetAnagram(Algo algo){
             //We prepare the variable where to store the anagram
             string anagram;
             // This will store if the anagram is valid or not
@@ -106,10 +90,10 @@ namespace AnagramSolver {
             do {
                 anagram = UI.Input("Anagram:");
                 // We check and assing the pattern match of the given anagram, if it's true we continue, yey we have a geniuns
-                if (isValid = Regex.IsMatch(anagram, pattern)) continue;
+                if (isValid = algo.IsValid(anagram)) continue;
                 // Otherwise, for the monkeys, we will output some messages to provide the necessary information about our pattern requierements.
                 UI.Warning("Only A-Za-z characters are accepted.");
-                UI.Warning("The maximum length of characters is " + maxCharacters + " and the minimum is " + minCharacters);
+                UI.Warning("The maximum length of characters is " + algo.MaxCharacters + " and the minimum is " + algo.MinCharacters);
             } while(!isValid);
             UI.Ok("Anagram is matching the pattern");
             // In the end we return the valid anagram
