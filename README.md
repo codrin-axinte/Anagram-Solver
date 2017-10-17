@@ -22,11 +22,13 @@ Design a system that will allow the player to enter up to 3 random letters. The 
 * Before we finish we do another step to sort the valid solutions by length and letter order
 * Output the best solution
 * Output other solutions as suggestions, if exists
+
+### Flowchart
 ![Flowchart](https://github.com/codrin-axinte/Anagram-Solver/blob/master/AnagramSolver.png)
 
 ### Concept In Depth
 * **Database File**
-We allow the player the specify a database file to read, otherwise we will use the default one if left blank. This allows the application to be more dynamic.
+We allow the player the specify a database file to read, otherwise we will use the default one if left blank. This allows the application to be more dynamic. For now the app is working only with **.csv** files.
 * **Anagram validation**
   For the anagram validation we will use a regex pattern to solve all at once. The pattern consists in only alphabetics characters A to Z (Upper or Lower case) and the characters length range defined. Minimum 1 character with a maximum of 3. Pattern example `^[a-zA-Z]}{1,3}$`.
 
