@@ -32,4 +32,5 @@ We allow the player the specify a database file to read, otherwise we will use t
 
 
 ### Improving The Algorithm
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a quam vel arcu luctus auctor. Donec finibus accumsan metus nec convallis. Suspendisse nulla quam, blandit in lacus sed, volutpat pulvinar ipsum. Aliquam erat volutpat. Cras suscipit ante mi, id convallis nibh eleifend vel. Nullam dictum condimentum enim non hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur efficitur scelerisque sem. Sed sed massa nec urna consequat scelerisque quis in erat. Sed auctor ex libero, ac gravida massa rutrum vel. Nullam iaculis ante sed metus imperdiet rutrum. Morbi ut ex eget ipsum luctus elementum sit amet in erat.
+When working with large database files, having a cache file it can be a big improvement. After the the user inputs a valid anagram, the cache manager will **search for the anagram** in it's file, if it finds a result it will output it, otherwise it will go normally by *reading the database*, *collecting solutions*, *sorting*, *writing to cache* and finally *output* it.
+The **cache file** name it's the **database path encrypted**, because this allows each database to have it's own cache file. *Different databases may have different cache values*.
