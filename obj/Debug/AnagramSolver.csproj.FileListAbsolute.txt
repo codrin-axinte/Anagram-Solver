@@ -4,3 +4,9 @@ D:\Workspace\VS 2012\AnagramSolver\obj\Debug\AnagramSolver.csprojResolveAssembly
 D:\Workspace\VS 2012\AnagramSolver\obj\Debug\AnagramSolver.exe
 D:\Workspace\VS 2012\AnagramSolver\obj\Debug\AnagramSolver.pdb
 D:\Workspace\VS 2012\AnagramSolver\bin\Debug\resources\db.csv
+U:\projects\Anagram-Solver\bin\Debug\resources\db.csv
+U:\projects\Anagram-Solver\bin\Debug\AnagramSolver.exe
+U:\projects\Anagram-Solver\bin\Debug\AnagramSolver.pdb
+U:\projects\Anagram-Solver\obj\Debug\AnagramSolver.csprojResolveAssemblyReference.cache
+U:\projects\Anagram-Solver\obj\Debug\AnagramSolver.exe
+U:\projects\Anagram-Solver\obj\Debug\AnagramSolver.pdb

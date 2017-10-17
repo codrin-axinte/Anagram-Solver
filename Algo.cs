@@ -11,7 +11,7 @@ namespace AnagramSolver {
         public int MinCharacters { get; private set; }
 
         private string _filePath;
-        private string _private;
+        private string _pattern;
 
         public Algo(string dbPath) {
             _filePath = dbPath;
@@ -28,12 +28,13 @@ namespace AnagramSolver {
             // And from the characters length range defined in the parameters.
             MaxCharacters = maxCharacters;
             MinCharacters = minCharacters;
-            _private = "^[a-zA-Z]{" + minCharacters + "," + maxCharacters + "}$";
+            _pattern = "^[a-zA-Z]{" + minCharacters + "," + maxCharacters + "}$";
         }
         
         public bool IsValid(string anagram) {
             // We perform a regex check on the anagram based our pattern and return the result
-            return Regex.IsMatch(anagram, _private);
+            if (anagram == null) return false;
+            return Regex.IsMatch(anagram, _pattern);
         }
         
         public List<string> Solve(string anagram) {
@@ -45,19 +46,16 @@ namespace AnagramSolver {
                 using (var reader = new StreamReader(_filePath)) {
                     // This stores the current line while reading and parsing
                     string line;
-                    // While there are lines to read, we assing line var the current reading line
+                    // While there are lines to read, we assing line var, the current reading line
                     while ((line = reader.ReadLine()) != null) {
                         var row = ParseCsv(line);
-                        //
                         if(row.Length > anagram.Length || !row.All(anagram.Contains)) continue;
                         data.Add(row);
                     }
                 }
             }
             catch (Exception e) {
-                // If any error occurs we catch, output it, and throw it again
-                UI.Error(e.Message);
-                throw;
+                // If any error occurs we catch, output it
             }
             // Before we return, we must sort the list data to match our requierement. 
             // We first sort words by their length descending, the more letters, the more valuable

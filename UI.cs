@@ -16,6 +16,12 @@ namespace AnagramSolver
             return Console.ReadLine();
         }
 
+        public static string InputInline(string label)
+        {
+            Console.Write("[-] " + label);
+            return Console.ReadLine();
+        }
+
         public static void Info(string message)
         {
             Console.WriteLine("[INFO] " + message);
