@@ -22,6 +22,7 @@ Design a system that will allow the player to enter up to 3 random letters. The 
 * Before we finish we do another step to sort the valid solutions by length and letter order
 * Output the best solution
 * Output other solutions as suggestions, if exists
+![Flowchart](https://github.com/codrin-axinte/Anagram-Solver/blob/master/AnagramSolver.png)
 
 ### Concept In Depth
 * **Database File**
