@@ -30,7 +30,7 @@ Design a system that will allow the player to enter up to 3 random letters. The 
 * **Database File**
 We allow the player the specify a database file to read, otherwise we will use the default one if left blank. This allows the application to be more dynamic. For now the app is working only with **.csv** files.
 * **Anagram validation**
-  For the anagram validation we will use a regex pattern to solve all at once. The pattern consists in only alphabetics characters A to Z (Upper or Lower case) and the characters length range defined. Minimum 1 character with a maximum of 6. Pattern example `^[a-zA-Z]}{1,6}$`.
+  For the anagram validation we will use a regex pattern to solve all at once. The pattern consists in only alphabetics characters A to Z (Upper or Lower case) and the characters length range defined. Minimum 1 character with a maximum of 6. Pattern example `^[a-zA-Z]{1,6}$`.
 
 
 ### Improving The Algorithm
