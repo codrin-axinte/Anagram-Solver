@@ -7,36 +7,75 @@ using System.Text.RegularExpressions;
 
 namespace AnagramSolver {
     public class Algo {
+        /// <summary>
+        /// Define the maximum characters the anagram can have 
+        /// </summary>
         public int MaxCharacters { get; private set; }
+        /// <summary>
+        /// Define the minimum characters the anagram can have
+        /// </summary>
         public int MinCharacters { get; private set; }
 
+        /// <summary>
+        /// Stores the database file path
+        /// </summary>
         private string _filePath;
+        /// <summary>
+        /// Stores the validation pattern
+        /// </summary>
         private string _pattern;
 
+
+        /// <summary>
+        /// Init the algo with the database path without any rules defined
+        /// </summary>
+        /// <param name="dbPath"></param>
         public Algo(string dbPath) {
             _filePath = dbPath;
         }
         
+
+        /// <summary>
+        /// Init the algo with the database path and the characters rules defined
+        /// </summary>
+        /// <param name="dbPath"></param>
+        /// <param name="maxCharacters"></param>
+        /// <param name="minCharacters"></param>
         public Algo(string dbPath, int maxCharacters = 9, int minCharacters = 1) {
             _filePath = dbPath;
             SetRules(maxCharacters, minCharacters);
         }
-        
+
+        /// <summary>
+        /// Define the pattern for the anagram we want to solve. 
+        /// The pattern consists in: 
+        /// - Only alphabetics characters A-Z (Uppers or Lowercase)
+        /// - And from the characters length range defined in the parameters.
+        /// </summary>
+        /// <param name="maxCharacters"></param>
+        /// <param name="minCharacters"></param>
         public void SetRules(int maxCharacters = 9, int minCharacters = 1) {
-            // Here we define the pattern for the anagram we want to solve. 
-            // The pattern consists in only alphabetics characters a-z (Uppers or Lowercase)
-            // And from the characters length range defined in the parameters.
+           
             MaxCharacters = maxCharacters;
             MinCharacters = minCharacters;
             _pattern = "^[a-zA-Z]{" + minCharacters + "," + maxCharacters + "}$";
         }
-        
-        public bool IsValid(string anagram) {
-            // We perform a regex check on the anagram based our pattern and return the result
+
+        /// <summary>
+        /// We perform a regex check on the anagram based our pattern and return the result
+        /// </summary>
+        /// <param name="anagram"></param>
+        /// <returns></returns>
+        public bool IsValid(string anagram) {           
             if (anagram == null) return false;
             return Regex.IsMatch(anagram, _pattern);
         }
-        
+
+        /// <summary>
+        /// Solve the given anagram
+        /// </summary>
+        /// <param name="anagram"></param>
+        /// <returns></returns>
         public List<string> Solve(string anagram) {
             // We prepare a list of solutions to return later
             var data = new List<string>();

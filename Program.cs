@@ -4,8 +4,15 @@ using System.Linq;
 
 namespace AnagramSolver {
 
-    internal class Program {        
+    internal class Program {
 
+        /// <summary>
+        /// Keep Alive Flag, while this is true the application will be alive.
+        /// </summary>
+        private static bool _keepAlive = true;
+        
+
+        /// <param name="args"></param>
         public static void Main(string[] args) {
             // Get words database path 
             var filePath = GetFilePath();
@@ -14,9 +21,8 @@ namespace AnagramSolver {
             // Encode db file path, so we pair the cache with the file path database. Different databases may have different solutions
             var cacheFile = Base64Encode(filePath);
             // Init Cache Manager
-            var cache = new Cache("resources/" + cacheFile);
-            var keepAlive = true;
-            while (keepAlive) {
+            var cache = new Cache("resources/" + cacheFile);         
+            while (_keepAlive) {
                 // Output a blank space on each turn
                 UI.Blank();
                 // Validate and get the anagram
@@ -26,7 +32,7 @@ namespace AnagramSolver {
                 var solutions = cache.Find(anagram);
              
                 // Check if anagram was found in the cache repository
-                if (solutions == null) {
+                if (solutions == null || solutions.Count == 0) {
                     // If there were no solutions found in the cache repository, then we collect a new set of solutions
                     solutions = algo.Solve(anagram);
                    
@@ -51,17 +57,27 @@ namespace AnagramSolver {
                     UI.List(solutions, "Other suggestions:", 1);
             }
         }
-        
+        /// <summary>
+        /// Encode string to Base64
+        /// </summary>
+        /// <param name="plainText"></param>
+        /// <returns></returns>
         private static string Base64Encode(string plainText) {
-            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
-            return Convert.ToBase64String(plainTextBytes);
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText); // We get the bytes from the plain text we want to encode
+            return Convert.ToBase64String(plainTextBytes); // We encode the bytes to a base64 string
         }
        
+        /// <summary>
+        /// Return the default database file path, or a custom one.
+        /// </summary>
+        /// <param name="defaultFilePath"></param>
+        /// <returns></returns>
         private static string GetFilePath(string defaultFilePath = "resources/db.csv") {          
             string path;
             bool fileExists;
             // We repeat the reading until the file exists
             do {
+                // Ask user for the file path
                 path = UI.Input("Please input your dictionary path (Leave it blank to use the default):");
                 // If the input is left blank we set the path to default one
                 if (string.IsNullOrEmpty(path))            
@@ -70,11 +86,16 @@ namespace AnagramSolver {
                 if (!(fileExists = File.Exists(path)))
                     UI.Error("File not found at the given path");
                 
-            } while (!fileExists);
+            } while (!fileExists); // Repeat this until the given file, exists
 
             return path;
         }
 
+        /// <summary>
+        /// Parse the user input to get and validate the anagram based on the algorithm
+        /// </summary>
+        /// <param name="algo"></param>
+        /// <returns></returns>
         private static string GetAnagram(Algo algo){
             //We prepare the variable where to store the anagram
             string anagram;
@@ -84,7 +105,7 @@ namespace AnagramSolver {
             do {
                 // Get the user input for the anagram
                 anagram = UI.Input("Anagram:");
-                // We check and assing the pattern match of the given anagram, if it's true we continue, yey we have a geniuns
+                // We check and assign the pattern match of the given anagram, if it's true we continue, yey we have a genius
                 if (isValid = algo.IsValid(anagram)) continue;
                 // Otherwise, for the monkeys, we will output some messages to provide the necessary information about our pattern requierements.
                 UI.Warning("Only A-Za-z characters are accepted.");
@@ -94,7 +115,6 @@ namespace AnagramSolver {
             UI.Ok("Anagram is matching the pattern");
             return anagram;
         }
-
       
     }
 }
