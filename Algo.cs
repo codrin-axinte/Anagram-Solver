@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Common;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -79,6 +78,7 @@ namespace AnagramSolver {
         public List<string> Solve(string anagram) {
             // We prepare a list of solutions to return later
             var data = new List<string>();
+            anagram = anagram.ToLower();
             // Anagram was not found, so we continue
             try {
                 // We try to parse the file from the given path using the StreamReader
@@ -86,15 +86,17 @@ namespace AnagramSolver {
                     // This stores the current line while reading and parsing
                     string line;
                     // While there are lines to read, we assing line var, the current reading line
-                    while ((line = reader.ReadLine()) != null) {
-                        var row = ParseCsv(line);
-                        if(row.Length > anagram.Length || !row.All(anagram.Contains)) continue;
-                        data.Add(row);
+                    while ((line = ParseLine(reader.ReadLine())) != null) {                      
+                        // If one of these conditions is true, then we go to the next line
+                        if(line.Length > anagram.Length || !line.All(anagram.Contains)) continue;
+                        // Otherwise we add the line as a possible solution
+                        data.Add(line);
                     }
                 }
             }
             catch (Exception e) {
                 // If any error occurs we catch, output it
+                UI.Error(e.Message);
             }
             // Before we return, we must sort the list data to match our requierement. 
             // We first sort words by their length descending, the more letters, the more valuable
@@ -104,15 +106,18 @@ namespace AnagramSolver {
             // At the end we return all the sorted solutions
             return solutions;
         }
-
-        private string ParseCsv(string line) {
-            // We split the current line by a comma. We assume that the format is: value, length
+        /// <summary>
+        /// We split the current line by a comma. Assumming that the format is: value, length (or anything else, it will be just ignored)
+        /// </summary>
+        /// <param name="line"></param>
+        /// <returns></returns>
+        private string ParseLine(string line) {           
             // We store the first row as lowercase for avoiding any case issues
             var row = line.Split(',');
          
             // We convert the second row to be able to compare it
             // Never trust the client, we will get the length by code
-            //var len = Convert.ToInt32(row[1]);
+            // Make the word lower to avoid any error
             return row[0].ToLower();
         }
     }
