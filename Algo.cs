@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace AnagramSolver {
-    public class Algo {
+    public class Algo : IAlgo {
         /// <summary>
         /// Define the maximum characters the anagram can have 
         /// </summary>
