@@ -31,6 +31,9 @@ Windows:
 * Output the best solution
 * Output other solutions as suggestions, if exists
 
+## Solve Flowchart
+![Anagram Solve Flowchart](https://github.com/codrin-axinte/Anagram-Solver/blob/master/Solve.png)
+
 ## Usage example
 
 The program allows the player to specify a file to read, if left blank, a default database will be used. On the next step the user will be asked to input the anagram until it matches the selected algorithm rules. Finally a solution may be displayed, if was found. In addition if there are other suggestions, those will be displayed too.
