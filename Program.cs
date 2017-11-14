@@ -1,6 +1,7 @@
 ﻿﻿using System;
 using System.IO;
 using System.Linq;
+using AnagramSolver.Algorithm;
 
 namespace AnagramSolver {
 
@@ -14,14 +15,18 @@ namespace AnagramSolver {
 
         /// <param name="args"></param>
         public static void Main(string[] args) {
-            // Get words database path 
-            var filePath = GetFilePath();
-            // Init Algo object with the database file path
-            var algo = new Algo(filePath, 6);
-            // Encode db file path, so we pair the cache with the file path database. Different databases may have different solutions
-            var cacheFile = Base64Encode(filePath);
+            
+            // Init Database Manager
+            var db = new DatabaseManager(GetFilePath(), DatabaseType.CSV);
+
             // Init Cache Manager
-            var cache = new Cache("resources/" + cacheFile);         
+            var cache = new Cache("resources/" + db.CacheFile);
+
+
+            // Init Default Algo object with the database file path
+            var algo = new DefaultAlgo(db);
+            
+
             while (_keepAlive) {
                 // Output a blank space on each turn
                 UI.Blank();
@@ -35,7 +40,7 @@ namespace AnagramSolver {
                 if (solutions == null || solutions.Count == 0) {
                     // If there were no solutions found in the cache repository, then we collect a new set of solutions
                     solutions = algo.Solve(anagram);
-                   
+                  
                     // We store the valid anagram with already solved solutions to the cache repository and save it
                     cache.Save(anagram, solutions);
                 }
@@ -96,7 +101,7 @@ namespace AnagramSolver {
         /// </summary>
         /// <param name="algo"></param>
         /// <returns></returns>
-        private static string GetAnagram(Algo algo){
+        private static string GetAnagram(DefaultAlgo algo){
             //We prepare the variable where to store the anagram
             string anagram;
             // This will store if the anagram is valid or not

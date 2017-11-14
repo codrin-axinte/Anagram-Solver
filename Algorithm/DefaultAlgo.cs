@@ -4,8 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace AnagramSolver {
-    public class Algo : IAlgo {
+namespace AnagramSolver.Algorithm {
+    public class DefaultAlgo : IAlgorithm {
         /// <summary>
         /// Define the maximum characters the anagram can have 
         /// </summary>
@@ -24,15 +24,7 @@ namespace AnagramSolver {
         /// </summary>
         private string _pattern;
 
-
-        /// <summary>
-        /// Init the algo with the database path without any rules defined
-        /// </summary>
-        /// <param name="dbPath"></param>
-        public Algo(string dbPath) {
-            _filePath = dbPath;
-        }
-        
+        private DatabaseManager _db;         
 
         /// <summary>
         /// Init the algo with the database path and the characters rules defined
@@ -40,8 +32,8 @@ namespace AnagramSolver {
         /// <param name="dbPath"></param>
         /// <param name="maxCharacters"></param>
         /// <param name="minCharacters"></param>
-        public Algo(string dbPath, int maxCharacters = 9, int minCharacters = 1) {
-            _filePath = dbPath;
+        public DefaultAlgo(DatabaseManager db, int maxCharacters = 9, int minCharacters = 1) {
+            _db = db;
             SetRules(maxCharacters, minCharacters);
         }
 
@@ -78,26 +70,15 @@ namespace AnagramSolver {
         public List<string> Solve(string anagram) {
             // We prepare a list of solutions to return later
             var data = new List<string>();
-            anagram = anagram.ToLower();
-            // Anagram was not found, so we continue
-            try {
-                // We try to parse the file from the given path using the StreamReader
-                using (var reader = new StreamReader(_filePath)) {
-                    // This stores the current line while reading and parsing
-                    string line;
-                    // While there are lines to read, we assing line var, the current reading line
-                    while ((line = ParseLine(reader.ReadLine())) != null) {                      
-                        // If one of these conditions is true, then we go to the next line
-                        if(line.Length > anagram.Length || !line.All(anagram.Contains)) continue;
-                        // Otherwise we add the line as a possible solution
-                        data.Add(line);
-                    }
-                }
-            }
-            catch (Exception e) {
-                // If any error occurs we catch, output it
-                UI.Error(e.Message);
-            }
+            anagram = anagram.ToLower();            
+            _db.ReadLines((line) =>
+            {
+                // If one of these conditions is true, then we go to the next line
+                if (line.Length > anagram.Length || !line.All(anagram.Contains)) return;
+                // Otherwise we add the line as a possible solution
+                data.Add(line);
+            });
+       
             // Before we return, we must sort the list data to match our requierement. 
             // We first sort words by their length descending, the more letters, the more valuable
             // After we sort it in the alphabet order

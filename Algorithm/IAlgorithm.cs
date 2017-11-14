@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AnagramSolver
+namespace AnagramSolver.Algorithm
 {
-    interface IAlgo
+    interface IAlgorithm
     {
         bool IsValid(string anagram);
         List<string> Solve(string anagram);
