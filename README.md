@@ -13,7 +13,7 @@ Windows:
 > Open in visual studio and compile it.
 > Run the executable
 ```
-### Concept
+### Algorithm
 * Get the database file path
 * Get the angram input from the user
 * Validate the input:
