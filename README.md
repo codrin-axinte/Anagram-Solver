@@ -34,7 +34,7 @@ Windows:
 ## Solve Flowchart
 ![Anagram Solve Flowchart](https://github.com/codrin-axinte/Anagram-Solver/blob/master/Solve.png)
 
-**Looping while having lines**
+**Loop: While have lines**
 ```csharp
 ...
  _db.ReadLines((line) =>
@@ -47,7 +47,7 @@ data.Add(line);
 ...
 ```
 
-**Parsing the Line**
+**ParseLine: return word**
 ```csharp
 /// <summary>
 /// We split the current line by a comma. Assumming that the format is: value, length (or anything else, it will be just ignored)
