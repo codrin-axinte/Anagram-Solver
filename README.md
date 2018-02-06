@@ -34,6 +34,38 @@ Windows:
 ## Solve Flowchart
 ![Anagram Solve Flowchart](https://github.com/codrin-axinte/Anagram-Solver/blob/master/Solve.png)
 
+**Looping while having lines**
+```csharp
+...
+ _db.ReadLines((line) =>
+{
+// If one of these conditions is true, then we go to the next line
+if (line.Length > anagram.Length || !line.All(anagram.Contains)) return;
+// Otherwise we add the line as a possible solution
+data.Add(line);
+});
+...
+```
+
+**Parsing the Line**
+```csharp
+/// <summary>
+/// We split the current line by a comma. Assumming that the format is: value, length (or anything else, it will be just ignored)
+/// </summary>
+/// <param name="line"></param>
+/// <returns></returns>
+private string ParseLine(string line) {           
+    // We store the first row as lowercase for avoiding any case issues
+    var row = line.Split(',');
+
+    // We convert the second row to be able to compare it
+    // Never trust the client, we will get the length by code
+    // Make the word lower to avoid any error
+    return row[0].ToLower();
+}
+```
+
+
 ## Usage example
 
 The program allows the player to specify a file to read, if left blank, a default database will be used. On the next step the user will be asked to input the anagram until it matches the selected algorithm rules. Finally a solution may be displayed, if was found. In addition if there are other suggestions, those will be displayed too.
